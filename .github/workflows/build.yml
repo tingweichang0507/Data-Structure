@@ -1,0 +1,9 @@
+name: Build polynomial
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile
+        run: g++ -std=c++17 -Wall -Wextra -Wpedantic -O2 homework2/src/polynomial.cpp -o polynomial
